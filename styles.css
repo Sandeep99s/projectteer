@@ -1,0 +1,1650 @@
+:root {
+    --primary-red: #F74747;
+    --secondary-red: #FE8C88;
+    --dark-red: #550909;
+    --primary-blue: #F74747;
+    --secondary-blue: #FE8C88;
+    --dark-blue: #470707;
+    --white: #ffffff;
+    --yellow: #FFB800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: #333;
+}
+
+/* Header & Navigation */
+header {
+    background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-blue), var(--dark-blue));
+    min-height: 70vh; /* Reduced from 80vh to make it smaller */
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 50% 29%;
+    border-bottom-right-radius: 50% 29%;
+}
+
+/* Mobile Styles for Hero Section */
+@media (max-width: 768px) {
+    /* Hero section adjustments */
+    .hero-content {
+        margin-top: -3rem !important;
+        margin-bottom: -17rem !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 0 5% !important;
+    }
+    
+    .hero {
+        flex-direction: column !important;
+        padding: 20% 5% 0 !important;
+    }
+    
+    .hero-image {
+        width: 70% !important;
+        right: 0 !important;
+        margin: 1rem auto !important;
+        order: 2 !important;
+    }
+    
+    /* Hero section text adjustments */
+    .hero-content h1 {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .play-now {
+        padding: 0.8rem 2.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Navigation Bar */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-blue);
+    z-index: 1000;
+    padding: 1rem 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 42px;
+    width: auto;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.register-btn, .login-btn {
+    padding: 0.8rem 2.8rem;
+    font-size: 0.935rem; /* Reduced from 1.1rem */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--yellow);
+    color: #000;
+    transition: transform 0.2s ease;
+}
+
+.register-btn:hover, .login-btn:hover {
+    transform: scale(1.05);
+}
+
+.tg-link {
+    display: flex;
+    align-items: center;
+}
+
+.tg-logo {
+    height: 42px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.tg-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: 8% 15% 0;
+    display: flex;
+    flex-direction: row; /* Changed to row for desktop */
+    justify-content: space-between; /* Better spacing between elements */
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 50%; /* Reduced from 80% to fit beside image */
+    text-align: left; /* Left-aligned text looks better with image on right */
+    padding-top: 2%;
+    order: 1; /* Content first on desktop */
+}
+
+.hero-image {
+    width: 36%; /* Reduced from 45% by 20% */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    order: 2; /* Image second on desktop */
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    transform: scale(0.8); /* Added 20% reduction in scale */
+    transform-origin: center;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #4a96f1, #6eb6ff, #89ceff);
+    border-radius: 50%;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    filter: blur(40px);
+}
+
+/* Blog Section Styles */
+.blog-section {
+    padding: 60px 20px;
+    background: #f8f8f8;
+}
+
+.blog-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.blog-intro {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #555;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.1);
+}
+
+.blog-card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.blog-date {
+    display: block;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.blog-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    color: #222;
+}
+
+.blog-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.blog-read-more {
+    color: #FFD700;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.blog-read-more:after {
+    content: '→';
+    margin-left: 5px;
+    transition: margin-left 0.3s ease;
+}
+
+.blog-read-more:hover:after {
+    margin-left: 10px;
+}
+
+.blog-view-all {
+    margin-top: 20px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #FFD700;
+    color: #000;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background: #E5C100;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* Gift Code Section Styles */
+.gift-code-section {
+    background: linear-gradient(135deg, #F74747 0%, #691010 100%);
+    padding: 3rem 5%; /* Added horizontal padding of 5% on both sides */
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5 10px 30px rgba(0,0,0,0.2);
+    margin-top: 5rem;
+    border-radius: 30px;
+    width: 90%; /* Added width to make it smaller from left and right */
+    margin-left: auto; /* Center the section horizontally */
+    margin-right: auto;
+}
+
+.gift-code-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.gift-code-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.gift-code-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.gift-code-display {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gift-code-value {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #FFD700;
+    filter: blur(4px);
+    transition: all 0.5s ease;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    user-select: none;
+    padding: 10px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-code-value.revealed {
+    filter: blur(0);
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.1);
+    animation: revealCode 0.8s ease-out forwards;
+}
+
+@keyframes revealCode {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+        filter: blur(4px);
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+        filter: blur(2px);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+}
+
+.gift-code-value::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.gift-code-value.revealed::before {
+    animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.gift-code-copy-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 20px;
+    background: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.gift-code-value.revealed + .gift-code-copy-btn {
+    animation: fadeInButton 0.5s ease 0.6s forwards;
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gift-code-value.revealed {
+    filter: blur(0);
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.gift-code-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gift-code-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: var(--yellow); /* Changed text color to yellow */
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 600; /* Added font weight to make it more visible */
+    text-shadow: 0 0 5px rgba(255,184,0,0.3); /* Added subtle glow effect */
+}
+
+.gift-code-input::placeholder {
+    color: rgba(255,255,255,0.7); /* Made placeholder slightly dimmer */
+}
+
+.gift-code-input:focus {
+    outline: none;
+    border-color: var(--yellow);
+    box-shadow: 0 0 10px rgba(255,184,0,0.3);
+}
+
+.gift-code-button {
+    padding: 0.8rem 2rem;
+    background-color: var(--yellow);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.gift-code-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,184,0,0.4);
+}
+
+.gift-code-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    height: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gift-code-message.visible {
+    opacity: 1;
+}
+
+.gift-code-message.success {
+    color: #4caf50;
+}
+
+.gift-code-message.error {
+    color: #f44336;
+}
+
+.gift-code-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gift-code-copy-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 20px;
+    background: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.gift-code-copy-btn:hover {
+    background: #E5C100;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+.gift-code-copy-btn.copied .copy-text {
+    display: none;
+}
+
+.gift-code-copy-btn.copied .copied-text {
+    display: inline;
+}
+
+.gift-code-copy-btn .copied-text {
+    display: none;
+}
+
+.gift-code-copy-btn.copied .copy-text {
+    display: none;
+}
+
+.gift-code-copy-btn.copied .copied-text {
+    display: inline-block;
+}
+
+.gift-code-copy-btn.copied {
+    background-color: #4caf50;
+    color: white;
+}
+
+.gift-code-copy-btn .copied-text {
+    display: none;
+}
+
+.gift-code-copy-btn.copied .copy-text {
+    display: none;
+}
+
+.gift-code-copy-btn.copied .copied-text {
+    display: inline-block;
+}
+
+.gift-code-copy-btn.copied {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Update gift-code-display to have relative positioning for the copy button */
+.gift-code-display {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .gift-code-title {
+        font-size: 1.5rem;
+    }
+    
+    .gift-code-value {
+        font-size: 1rem; /* Reduced from 1.2rem to make it smaller on mobile */
+        letter-spacing: 1px; /* Reduced letter spacing from 2px to 1px */
+        word-break: break-all; /* Allow breaking at any character */
+        padding: 0 0.5rem; /* Add some padding on the sides */
+    }
+    
+    .gift-code-display {
+        padding: 1rem;
+    }
+}
+
+/* Mobile Styles for Hero Section */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        min-height: 90vh;
+        border-bottom-left-radius: 50% 10%;
+        border-bottom-right-radius: 50% 10%;
+        background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-blue), var(--dark-blue));
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        flex-direction: column !important;
+        padding: 15% 5% 10% !important;
+        text-align: center !important;
+        justify-content: space-between !important;
+    }
+    
+    .hero-content {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 0 5% !important;
+        order: 2 !important; /* Text at bottom */
+    }
+    
+    .hero-image {
+        width: 80% !important;
+        margin: 0 auto 2rem !important;
+        order: 1 !important; /* Image at top */
+        display: flex !important;
+        justify-content: center !important;
+    }
+    
+    .hero-image img {
+        transform: scale(1) !important;
+        max-width: 100% !important;
+    }
+    
+    /* Hero section text adjustments */
+    .hero-content h1 {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        color: var(--white) !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        color: var(--white) !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .play-now {
+        padding: 0.8rem 3rem !important;
+        font-size: 1rem !important;
+        background-color: var(--yellow) !important;
+        color: #000 !important;
+        border-radius: 5px !important;
+        display: inline-block !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Navigation adjustments */
+    .top-nav {
+        padding: 0.8rem 5% !important;
+        background: var(--primary-blue) !important;
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+    }
+    
+    .nav-buttons {
+        gap: 0.5rem !important;
+    }
+    
+    
+    .register-btn, .login-btn {
+        font-size: 0.7rem !important;
+        padding: 0.6rem 1.2rem !important;
+        background-color: var(--yellow) !important;
+    }
+    
+    .logo img {
+        height: 32px !important;
+    }
+    
+    .tg-logo {
+        height: 32px !important;
+    }
+}
+
+/* Navigation text adjustments */
+.register-btn, .login-btn {
+    font-size: 0.8rem; /* Reduced from 0.94rem */
+}
+
+/* Hero section text adjustments */
+.hero-content h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.58rem; /* Reduced from 1.86rem */
+    color: var(--white);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.77rem; /* Reduced from 3.26rem */
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.play-now {
+    font-size: 1.02rem; /* Reduced from 1.2rem */
+    background-color: var(--yellow);
+    color: #000;
+    padding: 1rem 3.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease;
+}
+/* Discover section adjustments */
+.discover-section h2 {
+    font-size: 1.445rem; /* Reduced from 1.7rem */
+}
+
+.discover-section p {
+    font-size: 0.8rem; /* Reduced from 0.94rem */
+}
+
+/* Prediction section adjustments */
+.prediction-section .prediction-content {
+    font-size: 0.8rem; /* Reduced from 0.94rem */
+}
+
+.prediction-section .prediction-btn {
+    font-size: 0.8rem; /* Reduced from 0.94rem */
+}
+
+/* FAQ section adjustments */
+.faq-content h2 {
+    font-size: 1.7rem; /* Reduced from 2rem */
+}
+
+.faq-question h3 {
+    font-size: 1.02rem; /* Reduced from 1.2rem */
+}
+
+.fund-content h2 {
+    font-size: 1.5rem; /* Even smaller on mobile */
+    text-align: center;
+}
+
+.fund-title-break {
+    margin-top: 0.2rem; /* Smaller space on mobile */
+}
+
+.fund-description-content h3, .withdraw-description-content h3 {
+    font-size: 0.935rem; /* Reduced from 1.1rem */
+}
+
+.fund-description-content p, .withdraw-description-content p,
+.fund-description-content ol li, .withdraw-description-content ol li {
+    font-size: 0.655rem; /* Reduced from 0.77rem */
+}
+
+/* Join section adjustments */
+.join-content, .already-content {
+    font-size: 0.638rem; /* Reduced from 0.75rem */
+}
+
+.join-content h2 {
+    font-size: 1.156rem; /* Reduced from 1.36rem */
+}
+
+/* Footer adjustments */
+.footer-bottom p {
+    font-size: 0.578rem; /* Reduced from 0.68rem */
+}
+
+.play-now:hover {
+    transform: scale(1.1);
+    background-color: #ffd700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Main sections */
+.discover-section {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Center the content horizontally */
+    padding: 6rem 13%; /* Adjusted padding */
+    margin-top: 9%; /* Adjusted margin */
+    position: relative;
+    z-index: 2;
+    background-color: var(--white);
+}
+
+.discover-section .logo-container {
+    flex: 1; /* Allow logo to take up space */
+    text-align: center; /* Center the logo */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.discover-section .logo-container img {
+    height: 100px; /* Adjust logo size */
+    width: auto;
+}
+
+.discover-section .content {
+    flex: 2; /* Allow content to take more space */
+    text-align: left; /* Align text to the left */
+    padding-left: 2rem; /* Add padding between logo and text */
+}
+
+.discover-section h2 {
+    color: var(--primary-blue); /* Ensure correct color */
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.discover-section .underline {
+    width: 20%; /* Set underline to 20% of its container */
+    height: 3px;
+    background: var(--yellow);
+    margin: 0 0 2rem; /* Adjust margin for alignment */
+}
+
+.discover-section p {
+    max-width: 800px;
+    margin: 0 0 2rem;
+    line-height: 1.6;
+    color: #333;
+    font-size: 0.935rem; /* Reduced from 1.1rem */
+}
+
+.register-now-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem; /* Reduced from 1rem */
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-top: 1.4rem;
+    display: inline-block; /* Ensure correct display property */
+    z-index: 1; /* Ensure button is on top */
+}
+
+.register-now-btn:hover {
+    background-color: var(--secondary-blue); /* Ensure correct hover color */
+    transform: scale(1.1); /* Scale up the button to create a pop-up effect */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .discover-section {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        padding: 6rem 5%; /* Adjust padding for mobile */
+    }
+    
+    .discover-section .content {
+        text-align: center; /* Center align text on mobile */
+        padding-left: 0; /* Remove left padding on mobile */
+    }
+
+    .discover-section .underline {
+        margin: 0 auto 2rem; /* Center the underline */
+    }
+}
+
+/* VIP Prediction Section */
+.prediction-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.prediction-section .prediction-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333;
+    font-size: 0.935rem; /* Reduced from 1.1rem */
+}
+
+.prediction-section h2 {
+    margin-bottom: 1.5rem; /* Increase gap below heading */
+}
+
+.prediction-section .prediction-content p {
+    margin-bottom: 1.5rem; /* Increase gap below description */
+}
+
+.prediction-section .prediction-btn {
+    margin: 1.5rem; /* Increase gap around buttons */
+}
+
+.prediction-section .prediction-btn {
+    background-color: var(--primary-blue); /* Set button background to blue */
+    color: var(--white);
+    padding: 0.8rem 2.5rem;
+    font-size: 0.935rem; /* Reduced from 1.1rem */
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin: 1rem;
+}
+
+.prediction-section .prediction-btn:hover {
+    background-color: var(--secondary-blue); /* Ensure correct hover color */
+    transform: scale(1.1);
+}
+
+
+/* Join Section */
+.join-section, .already-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    background-color: #000;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid var(--white); /* Added underline */
+}
+
+.join-content, .already-content {
+    flex: 1;
+    padding-left: 0.5rem;
+    order: 2;
+    text-align: left;
+    font-size: 0.748rem; /* Reduced from 0.88rem */
+    line-height: 1.28;
+    z-index: 2; /* Ensure content is on top */
+}
+
+.join-image, .already-image {
+    flex: 1;
+    text-align: center;
+    order: 1;
+    position: relative;
+    left: 0;
+    transform: translateX(20%);
+    z-index: 0; /* Ensure image is below content */
+}
+
+.join-image img, .already-image img {
+    max-width: 45%;
+    height: auto;
+    z-index: 0; /* Ensure image is below content */
+}
+
+/* Mobile styles for join and already sections */
+@media (max-width: 768px) {
+    .join-section, .already-section {
+        flex-direction: column;
+        padding: 2rem 5%;
+    }
+    
+    .join-content, .already-content {
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+    
+    .join-image, .already-image {
+        order: 1;
+        transform: translateX(0);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .join-image img, .already-image img {
+        max-width: 60%;
+    }
+    
+    .join-content h2, .already-content h2 {
+        text-align: center;
+    }
+    
+    .join-content h2::after {
+        margin: 1rem auto 2rem;
+    }
+    
+    .join-content ul li {
+        text-align: left;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    background: linear-gradient(to bottom, var(--primary-blue), #000);
+    color: var(--white);
+    padding: 4rem 10%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.faq-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-content h2 {
+    color: var(--white);
+    font-size: 1.7rem; /* Reduced from 2rem */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 0.5rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border-left: 3px solid var(--yellow);
+    transition: background 0.3s ease;
+}
+
+.faq-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.02rem; /* Reduced from 1.2rem */
+    font-weight: 600;
+}
+
+.faq-toggle {
+    font-size: 1.275rem; /* Reduced from 1.5rem */
+    font-weight: bold;
+    color: var(--yellow);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, 
+                padding 0.5s ease-in-out,
+                opacity 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.faq-item.active .faq-answer {
+    opacity: 1;
+    transform: translateY(0);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-height: 500px;
+}
+
+.faq-item.open .faq-answer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-toggle {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-item.open .faq-answer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile adjustments for FAQ section */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 3rem 5%;
+    }
+    
+    .faq-content h2 {
+        font-size: 2rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Footer */
+.footer-bottom {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    background: var(--white);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+
+/* Mobile styles for footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+    
+    .footer-section h3 {
+        text-align: center;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-section ul li {
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .footer-section ul li::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .prediction-section {
+        padding: 3rem 5%;
+    }
+    
+    .prediction-section .prediction-content {
+        padding: 0 5%;
+    }
+    
+    .prediction-section .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .prediction-section .prediction-btn {
+        width: 80%;
+        max-width: 250px;
+        padding: 0.7rem 1rem;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}
+
+.discover-section {
+    margin-bottom: -1%; /* Decreased margin-bottom by 20% from 9% */
+    margin-top: 3.2rem; /* Adjust margin-top to decrease gap */
+}
+
+.join-content p {
+    margin-bottom: 2rem; /* Increased margin-bottom for gap */
+}
+
+.join-content ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+}
+
+.join-content ul li {
+    position: relative; /* Allow positioning of custom symbol */
+    padding-left: 1.5rem; /* Add padding to make space for symbol */
+}
+
+.join-content ul li::before {
+    content: '→'; /* Use a different symbol */
+    position: absolute;
+    left: 0; /* Position symbol to the left */
+    color: #fff; /* Initial color of the symbol */
+    transition: color 0.2s ease; /* Smooth transition for color change */
+}
+
+.join-content ul li:hover::before {
+    color: var(--yellow); /* Change symbol color to yellow on hover */
+}
+
+.join-content h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.7rem; /* Increased margin-bottom for gap */
+    position: relative;
+}
+
+.join-content h2::after {
+    content: '';
+    display: block;
+    width: 25%; /* Adjust width to half of the current 50% */
+    height: 3px;
+    background: var(--yellow); /* Use yellow color for underline */
+    margin: 1rem 0 2rem; /* Adjust margin for spacing, increased bottom margin */
+    line-height: 1.4; /* Add line-height for spacing */
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px; /* Ensure the line is thin */
+    background-color: var(--white);
+    margin: 2rem 0; /* Adjust margin for spacing */
+    border: none; /* Remove any default border */
+}
+
+.fund-section {
+    background-color: var(--primary-blue); /* Blue background */
+    color: #333; /* Dark text for better readability */
+    padding: 4rem 10%; /* Spacious padding */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+}
+
+.fund-content {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.fund-content h2 {
+    color: var(--primary-blue); /* Changed from red to blue */
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.yellow-underline {
+    width: 160px; /* Doubled from 80px */
+    height: 3px;
+    background-color: var(--yellow);
+    margin-bottom: 2rem;
+    margin-left: 0; /* Align to the left */
+}
+
+/* Mobile styles for fund section */
+@media (max-width: 768px) {
+    .fund-section {
+        padding: 3rem 5%;
+        background-color: var(--primary-blue);
+    }
+    
+    .fund-description, .withdraw-description {
+        flex-direction: column !important; /* Force vertical stacking */
+        max-height: none !important; /* Remove height restriction */
+        background-color: var(--white);
+        border-radius: 12px;
+        margin: 1.5rem 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        overflow: visible; /* Allow content to flow naturally */
+    }
+    .fund-description-image, .withdraw-description-image {
+        width: 100%;
+        max-height: none;
+        order: 1;
+        padding: 1rem 1rem 0; /* Decreased padding */
+        background-color: var(--white);
+        display: flex;
+        justify-content: center;
+        position: static;
+        transform: none;
+    }
+    
+    .fund-description-content, .withdraw-description-content {
+        width: 100%;
+        order: 2;
+        padding: 0.8rem 1rem 1.2rem; /* Decreased padding */
+        text-align: center;
+        position: static;
+    }
+    
+    /* ... existing code ... */
+}
+    
+    .fund-description-content, .withdraw-description-content {
+        width: 100%;
+        order: 2; /* Ensure content is below the image */
+        padding: 1rem 1.5rem 1.5rem;
+        text-align: center;
+        position: static; /* Reset any positioning */
+    }
+    
+    
+    /* Override any desktop styles that might interfere */
+    .fund-description, .withdraw-description {
+        display: flex;
+        flex-direction: column;
+    }
+
+.fund-description-content, .withdraw-description-content {
+    flex: 1.5;
+    padding: 2rem;
+}
+
+.fund-description {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 0;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    max-height: 400px; /* Increased by 20% from 250px */
+}
+
+.fund-description-image {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    height: 100%;
+    max-height: 400px; /* Increased by 20% from 250px */
+    overflow: hidden;
+}
+
+/* Keep withdraw description the same */
+/* Keep withdraw description the same */
+.withdraw-description {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 0;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    max-height: 340px; /* Increased from 300px to make it bigger */
+}
+
+.withdraw-description-image {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    height: 100%;
+    max-height: 400px; /* Increased from 300px to match container */
+    overflow: hidden;
+}
+
+.fund-description-image img {
+    width: 35%; /* Reduced from 90% to make images 10% smaller */
+    height: auto;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+    .withdraw-description-image img {
+    width: 35%; /* Reduced from 90% to make images 10% smaller */
+    height: auto;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.fund-description-content, .withdraw-description-content {
+    flex: 1; /* Adjusted from 1.2 to balance with the image section */
+    padding: 1rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fund-description-content h3, .withdraw-description-content h3 {
+    color: var(--primary-blue); /* Changed from red to blue */
+    font-size: 1.3rem;
+    font-weight: 600; /* Increased from 500 to make it bolder */
+    margin-bottom: 0.3rem;
+    margin-top: 0;
+}
+
+.fund-description-content p, .withdraw-description-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.fund-description-content ol, .withdraw-description-content ol {
+    list-style-type: decimal;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.fund-description-content ol li, .withdraw-description-content ol li {
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+    font-size: 0.9rem;
+}
+
+.fund-description-content ol li strong, .withdraw-description-content ol li strong {
+    font-weight: 700; /* Increased from 600 for more emphasis */
+    color: #333;
+}
+
+/* Add specific styling for the action words in the list items */
+.fund-description-content ol li:first-child strong, 
+.withdraw-description-content ol li:first-child strong {
+    color: var(--primary-blue);
+}
+
+.fund-description-content ol li:nth-child(2) strong, 
+.withdraw-description-content ol li:nth-child(2) strong {
+    color: var(--primary-blue);
+}
+
+.fund-description-content ol li:nth-child(3) strong, 
+.withdraw-description-content ol li:nth-child(3) strong {
+    color: var(--primary-blue);
+}
+
+.blue-heading {
+    color: var(--primary-blue);
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+    /* Adjust font sizes for better readability on mobile */
+    .hero-content h1 {
+        font-size: 1.3rem !important;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.2rem !important;
+    }
+    
+    /* Fix for fund and withdraw sections */
+    .fund-description, .withdraw-description {
+        flex-direction: column !important;
+        max-height: none !important;
+    }
+    
+    .fund-description-image, .withdraw-description-image,
+    .fund-description-content, .withdraw-description-content {
+        width: 100% !important;
+        max-height: none !important;
+    }
+    
+    /* Ensure images display properly */
+    .fund-description-image img, .withdraw-description-image img {
+        width: 70% !important;
+        margin: 1rem auto !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Fix FAQ section padding */
+    .faq-section {
+        padding: 3rem 5% !important;
+    }
+    
+    .faq-item {
+        padding: 0.8rem 1rem !important;
+    }
+}
+
+/* ... existing code ... */
+
+/* Fixed Telegram Help Button */
+.telegram-help-btn {
+    position: fixed;
+    bottom: 120px; /* Moved upward by approximately 20% from 30px */
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+/* Mobile adjustments for the help button */
+@media (max-width: 768px) {
+    .telegram-help-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 100px; /* Moved upward by approximately 20% from 20px */
+        right: 20px;
+    }
+    
+    .telegram-help-btn img {
+        width: auto;
+        height: 72px;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7); /* Increased opacity from 0.3 to 0.7 */
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8); /* Increased opacity from 0.4 to 0.8 */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7); /* Increased opacity from 0.3 to 0.7 */
+    }
+}
+
+.telegram-help-btn:hover {
+    animation-play-state: paused;
+    transform: scale(1.15);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9); /* Increased size and opacity from 0.5 to 0.9 */
+}
+
+.telegram-help-btn img {
+    width: auto;
+    height: 72px;
+    object-fit: cover;
+    padding: 0%;
+}
+
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+    /* ... existing mobile styles ... */
+}
